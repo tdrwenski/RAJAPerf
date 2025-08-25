@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756157530506,
+  "lastUpdate": 1756157939395,
   "repoUrl": "https://github.com/tdrwenski/RAJAPerf",
   "entries": {
     "Benchmark": [
@@ -207,6 +207,56 @@ window.BENCHMARK_DATA = {
           {
             "name": "Basic_PI_ATOMIC_RAJA_Seq",
             "value": 71.054,
+            "unit": "ms"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "tdrwenski",
+            "username": "tdrwenski"
+          },
+          "committer": {
+            "name": "tdrwenski",
+            "username": "tdrwenski"
+          },
+          "id": "c87d22ff66c7047404636fd3e007dd5d83988700",
+          "message": "Test GitHub benchmark",
+          "timestamp": "2025-08-22T17:24:09Z",
+          "url": "https://github.com/tdrwenski/RAJAPerf/pull/1/commits/c87d22ff66c7047404636fd3e007dd5d83988700"
+        },
+        "date": 1756157938378,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "RAJAPerf/Basic_Base_Seq_caliper",
+            "value": 230.14200000000002,
+            "unit": "ms"
+          },
+          {
+            "name": "RAJAPerf/Basic/Basic_DAXPY_Base_Seq_caliper",
+            "value": 158.32299999999998,
+            "unit": "ms"
+          },
+          {
+            "name": "RAJAPerf/Basic/Basic_PI_ATOMIC_Base_Seq_caliper",
+            "value": 71.81099999999999,
+            "unit": "ms"
+          },
+          {
+            "name": "RAJAPerf/Basic_RAJA_Seq_caliper",
+            "value": 176.285,
+            "unit": "ms"
+          },
+          {
+            "name": "RAJAPerf/Basic/Basic_DAXPY_RAJA_Seq_caliper",
+            "value": 105.06400000000001,
+            "unit": "ms"
+          },
+          {
+            "name": "RAJAPerf/Basic/Basic_PI_ATOMIC_RAJA_Seq_caliper",
+            "value": 71.217,
             "unit": "ms"
           }
         ]
