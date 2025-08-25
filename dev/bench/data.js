@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756152580199,
+  "lastUpdate": 1756153855235,
   "repoUrl": "https://github.com/tdrwenski/RAJAPerf",
   "entries": {
     "Benchmark": [
@@ -87,6 +87,46 @@ window.BENCHMARK_DATA = {
           {
             "name": "Basic_PI_ATOMIC_RAJA_Seq",
             "value": 70.12400000000001,
+            "unit": "ms"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "tdrwenski",
+            "username": "tdrwenski"
+          },
+          "committer": {
+            "name": "tdrwenski",
+            "username": "tdrwenski"
+          },
+          "id": "15ff09011e35aa50ac83e61ef1711d5fdeda9f02",
+          "message": "Test GitHub benchmark",
+          "timestamp": "2025-08-22T17:24:09Z",
+          "url": "https://github.com/tdrwenski/RAJAPerf/pull/1/commits/15ff09011e35aa50ac83e61ef1711d5fdeda9f02"
+        },
+        "date": 1756153854773,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Basic_DAXPY_Base_Seq",
+            "value": 136.22500000000002,
+            "unit": "ms"
+          },
+          {
+            "name": "Basic_DAXPY_RAJA_Seq",
+            "value": 159.175,
+            "unit": "ms"
+          },
+          {
+            "name": "Basic_PI_ATOMIC_Base_Seq",
+            "value": 70.45,
+            "unit": "ms"
+          },
+          {
+            "name": "Basic_PI_ATOMIC_RAJA_Seq",
+            "value": 70.90299999999999,
             "unit": "ms"
           }
         ]
