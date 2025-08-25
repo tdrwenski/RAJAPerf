@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756162300275,
+  "lastUpdate": 1756162638842,
   "repoUrl": "https://github.com/tdrwenski/RAJAPerf",
   "entries": {
     "RAJAPerf": [
@@ -121,6 +121,48 @@ window.BENCHMARK_DATA = {
           {
             "name": "Basic_PI_ATOMIC_RAJA_Seq",
             "value": 71.27699999999999,
+            "unit": "ms"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "committer": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "id": "9d108b03e9222d97588fe332219fe9eb46782c06",
+          "message": "Add benchmark workflows and conversion scripts",
+          "timestamp": "2025-08-25T20:05:30Z",
+          "url": "https://github.com/tdrwenski/RAJAPerf/commit/9d108b03e9222d97588fe332219fe9eb46782c06"
+        },
+        "date": 1756162637803,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Basic_DAXPY_Base_Seq",
+            "value": 137.048,
+            "unit": "ms"
+          },
+          {
+            "name": "Basic_DAXPY_RAJA_Seq",
+            "value": 164.265,
+            "unit": "ms"
+          },
+          {
+            "name": "Basic_PI_ATOMIC_Base_Seq",
+            "value": 70.798,
+            "unit": "ms"
+          },
+          {
+            "name": "Basic_PI_ATOMIC_RAJA_Seq",
+            "value": 70.326,
             "unit": "ms"
           }
         ]
