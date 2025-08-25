@@ -1,0 +1,62 @@
+name: Benchmarks
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+  workflow_dispatch: # TODO remove later, for testing
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  checks: write
+  contents: write
+  pull-requests: write
+
+jobs:
+  benchmarks:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Build RAJAPerf
+      uses: threeal/cmake-action@v1.3.0
+      with:
+        build-dir: build
+        options:
+          CMAKE_CXX_STANDARD=14
+          ENABLE_OPENMP=Off
+          CMAKE_BUILD_TYPE=Release
+        run-build: true
+        build-args: '--parallel 16'
+
+    - name: Run benchmarks and convert results
+      run: |
+        mkdir -p perf-results
+        # Run two kernels with two CPU variants
+        ./build/bin/raja-perf.exe --kernels Basic_PI_ATOMIC Basic_DAXPY --variants Base_Seq RAJA_Seq --outdir perf-results
+        # Convert CSV timing data to GitHub benchmark JSON format
+        python3 scripts/github/csv_to_github_benchmark.py perf-results/RAJAPerf-timing-Average.csv perf-results/raja_benchmark.json
+
+    - name: Store benchmark result
+      id: benchmark
+      continue-on-error: true
+      uses: benchmark-action/github-action-benchmark@v1
+      with:
+        name: 'RAJAPerf'
+        tool: 'customSmallerIsBetter'
+        output-file-path: perf-results/raja_benchmark.json
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        auto-push: true # TODO remove later, for testing
+        # auto-push: ${{ github.ref == 'refs/heads/develop' }}
+        gh-pages-branch: gh-pages
+        benchmark-data-dir-path: dev/bench
+        comment-always: true
+        fail-on-alert: true
+        alert-threshold: '120%'
+        max-items-in-chart: 100

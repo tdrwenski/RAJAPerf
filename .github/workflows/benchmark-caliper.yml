@@ -1,0 +1,76 @@
+name: Caliper Benchmarks
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+  workflow_dispatch: # TODO remove later, for testing
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  checks: write
+  contents: write
+  pull-requests: write
+
+jobs:
+  caliper-benchmarks:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Set up Spack
+      uses: spack/setup-spack@v2
+
+    - name: Install Caliper
+      run: |
+        spack install caliper
+        export CMAKE_PREFIX_PATH=$(spack location -i caliper)
+        echo "CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH" >> $GITHUB_ENV
+
+    - name: Build RAJAPerf
+      uses: threeal/cmake-action@v1.3.0
+      with:
+        build-dir: build
+        options:
+          CMAKE_CXX_STANDARD=14
+          ENABLE_OPENMP=Off
+          CMAKE_BUILD_TYPE=Release
+          RAJA_PERFSUITE_USE_CALIPER=ON
+        run-build: true
+        build-args: '--parallel 16'
+
+    - name: Run benchmarks and convert results
+      shell: spack-bash {0}
+      run: |
+        spack load caliper
+        mkdir -p perf-results
+        # Run two kernels with two CPU variants
+        ./build/bin/raja-perf.exe --kernels Basic_PI_ATOMIC Basic_DAXPY --variants Base_Seq RAJA_Seq --outdir perf-results
+        # Convert Caliper output to GitHub benchmark JSON format
+        cali-query -q "SELECT * FORMAT json(pretty)" perf-results/Base_Seq-default.cali > perf-results/Base_Seq-default.json
+        cali-query -q "SELECT * FORMAT json(pretty)" perf-results/RAJA_Seq-default.cali > perf-results/RAJA_Seq-default.json
+        python3 scripts/github/caliper_to_github_benchmark.py perf-results/Base_Seq-default.json perf-results/RAJA_Seq-default.json perf-results/caliper_benchmark.json
+
+    - name: Store benchmark result
+      id: benchmark
+      continue-on-error: true
+      uses: benchmark-action/github-action-benchmark@v1
+      with:
+        name: 'RAJAPerf with Caliper'
+        tool: 'customSmallerIsBetter'
+        output-file-path: perf-results/caliper_benchmark.json
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        auto-push: true # TODO remove later, for testing
+        # auto-push: ${{ github.ref == 'refs/heads/develop' }}
+        gh-pages-branch: gh-pages
+        benchmark-data-dir-path: dev/bench
+        comment-always: true
+        fail-on-alert: true
+        alert-threshold: '120%'
+        max-items-in-chart: 100
