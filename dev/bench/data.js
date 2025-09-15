@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757630491865,
+  "lastUpdate": 1757950639011,
   "repoUrl": "https://github.com/tdrwenski/RAJAPerf",
   "entries": {
     "clang_14_0_6_caliper": [
@@ -265,6 +265,38 @@ window.BENCHMARK_DATA = {
           {
             "name": "RAJA_HIP_Basic_PI_ATOMIC",
             "value": 0.0076452,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "committer": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "id": "22f4a9eda8fa8408c28e9568ae05728b568a3804",
+          "message": "Make test case fail on purpose for testing",
+          "timestamp": "2025-09-11T22:31:34Z",
+          "url": "https://github.com/tdrwenski/RAJAPerf/commit/22f4a9eda8fa8408c28e9568ae05728b568a3804"
+        },
+        "date": 1757950638046,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "RAJA_HIP_Basic_DAXPY",
+            "value": 0.00449178,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_PI_ATOMIC",
+            "value": 0.00757468,
             "unit": "s"
           }
         ]
