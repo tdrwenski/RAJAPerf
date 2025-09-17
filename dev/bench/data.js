@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1758069289641,
+  "lastUpdate": 1758069812649,
   "repoUrl": "https://github.com/tdrwenski/RAJAPerf",
   "entries": {
     "clang_14_0_6_caliper": [
@@ -251,6 +251,48 @@ window.BENCHMARK_DATA = {
           {
             "name": "RAJA_Seq_Basic_PI_ATOMIC",
             "value": 0.153459,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "committer": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "id": "7654d844ddc5de9cc289540d6fe1e30288989d07",
+          "message": "WIP make test slower on purpose",
+          "timestamp": "2025-09-17T00:26:46Z",
+          "url": "https://github.com/tdrwenski/RAJAPerf/commit/7654d844ddc5de9cc289540d6fe1e30288989d07"
+        },
+        "date": 1758069812185,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "RAJA_OpenMP_Basic_DAXPY",
+            "value": 0.00883205,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_OpenMP_Basic_PI_ATOMIC",
+            "value": 2.89049,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_Seq_Basic_DAXPY",
+            "value": 0.244549,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_Seq_Basic_PI_ATOMIC",
+            "value": 0.153524,
             "unit": "s"
           }
         ]
