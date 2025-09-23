@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1758639525539,
+  "lastUpdate": 1758657460505,
   "repoUrl": "https://github.com/tdrwenski/RAJAPerf",
   "entries": {
     "clang_14_0_6_caliper": [
@@ -667,6 +667,233 @@ window.BENCHMARK_DATA = {
           {
             "name": "RAJA_HIP_Basic_PI_ATOMIC",
             "value": 0.00757213,
+            "unit": "s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "committer": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "id": "ede573428285eacc7499b21a1e9503ab9d69b944",
+          "message": "Remove comment on alert",
+          "timestamp": "2025-09-23T19:41:59Z",
+          "url": "https://github.com/tdrwenski/RAJAPerf/commit/ede573428285eacc7499b21a1e9503ab9d69b944"
+        },
+        "date": 1758657459877,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "RAJA_HIP_Basic_MULTI_REDUCE",
+            "value": 0.00127088,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_MULTI_REDUCE",
+            "value": 0.000821756,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_PI_REDUCE",
+            "value": 0.00127499,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_REDUCE3_INT",
+            "value": 0.00101536,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_REDUCE_STRUCT",
+            "value": 0.00375163,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_TRAP_INT",
+            "value": 0.00140673,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_PI_REDUCE",
+            "value": 0.000608034,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_REDUCE3_INT",
+            "value": 0.000752195,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_REDUCE_STRUCT",
+            "value": 0.00147292,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_TRAP_INT",
+            "value": 0.000667315,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_PI_REDUCE",
+            "value": 0.000865276,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_REDUCE3_INT",
+            "value": 0.00145682,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_REDUCE_STRUCT",
+            "value": 0.00297438,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_TRAP_INT",
+            "value": 0.000883426,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_PI_REDUCE",
+            "value": 0.00535774,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_REDUCE3_INT",
+            "value": 0.0149693,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_REDUCE_STRUCT",
+            "value": 0.0303982,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_TRAP_INT",
+            "value": 0.00538867,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_PI_REDUCE",
+            "value": 0.000696325,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_REDUCE3_INT",
+            "value": 0.00100507,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_REDUCE_STRUCT",
+            "value": 0.00177254,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_TRAP_INT",
+            "value": 0.000734355,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_PI_REDUCE",
+            "value": 0.00261703,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_REDUCE3_INT",
+            "value": 0.00654819,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_REDUCE_STRUCT",
+            "value": 0.0130104,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_TRAP_INT",
+            "value": 0.00267404,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_ARRAY_OF_PTRS",
+            "value": 0.00377729,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_COPY8",
+            "value": 0.00240528,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_DAXPY",
+            "value": 0.00456309,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_DAXPY_ATOMIC",
+            "value": 0.00311887,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_IF_QUAD",
+            "value": 0.00293309,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_INDEXLIST_3LOOP",
+            "value": 0.0036609,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_INIT3",
+            "value": 0.0060074,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_INIT_VIEW1D",
+            "value": 0.0129718,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_INIT_VIEW1D_OFFSET",
+            "value": 0.0131448,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_MAT_MAT_SHARED",
+            "value": 0.00283483,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_MULADDSUB",
+            "value": 0.0046811,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_NESTED_INIT",
+            "value": 0.00670735,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_PI_ATOMIC",
+            "value": 0.00758026,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_EMPTY",
+            "value": 0.00335317,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_HIP_Basic_EMPTY",
+            "value": 0.00186512,
             "unit": "s"
           }
         ]
