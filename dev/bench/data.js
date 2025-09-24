@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1758732199333,
+  "lastUpdate": 1758732200736,
   "repoUrl": "https://github.com/tdrwenski/RAJAPerf",
   "entries": {
     "clang_14_0_6_openmp_caliper": [
@@ -868,6 +868,143 @@ window.BENCHMARK_DATA = {
           {
             "name": "RAJA_Seq-new_Basic_REDUCE_STRUCT",
             "value": 1.330784,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-new_Basic_TRAP_INT",
+            "value": 2.7688,
+            "unit": "ms/rep"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "committer": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "id": "5f5a0243ef2c9a11be2f08fead8275b36f79b4ca",
+          "message": "Revert \"WIP turn on comment on alert\"\n\nThis reverts commit 5dcb476f7f07a2f298255a2aeadafbbd591f9f53.",
+          "timestamp": "2025-09-24T16:31:39Z",
+          "url": "https://github.com/tdrwenski/RAJAPerf/commit/5f5a0243ef2c9a11be2f08fead8275b36f79b4ca"
+        },
+        "date": 1758732199680,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "RAJA_Seq-default_Basic_ARRAY_OF_PTRS",
+            "value": 11.34532,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_COPY8",
+            "value": 9.6106,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_DAXPY",
+            "value": 0.68901,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_DAXPY_ATOMIC",
+            "value": 0.685384,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_EMPTY",
+            "value": 0.26469299999999996,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_IF_QUAD",
+            "value": 7.295833333333333,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_INDEXLIST_3LOOP",
+            "value": 4.60756,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_INIT3",
+            "value": 3.3358,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_INIT_VIEW1D",
+            "value": 0.474104,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_INIT_VIEW1D_OFFSET",
+            "value": 0.3474236,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_MAT_MAT_SHARED",
+            "value": 174.36879999999996,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_MULADDSUB",
+            "value": 3.1040285714285716,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_NESTED_INIT",
+            "value": 0.5724020000000001,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_PI_ATOMIC",
+            "value": 1.066544,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_PI_REDUCE",
+            "value": 1.066706,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_REDUCE3_INT",
+            "value": 0.236698,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_REDUCE_STRUCT",
+            "value": 1.553818,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_TRAP_INT",
+            "value": 2.69816,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_MULTI_REDUCE",
+            "value": 2.28374,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-new_Basic_PI_REDUCE",
+            "value": 1.067084,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-new_Basic_REDUCE3_INT",
+            "value": 0.237318,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_Seq-new_Basic_REDUCE_STRUCT",
+            "value": 1.344556,
             "unit": "ms/rep"
           },
           {
