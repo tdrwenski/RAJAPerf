@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1758748132944,
+  "lastUpdate": 1758748134021,
   "repoUrl": "https://github.com/tdrwenski/RAJAPerf",
   "entries": {
     "clang_14_0_6_openmp_caliper": [
@@ -2648,6 +2648,233 @@ window.BENCHMARK_DATA = {
           {
             "name": "RAJA_HIP-occgs_256_Basic_EMPTY",
             "value": 0.0020084,
+            "unit": "ms/rep"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "committer": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "id": "73c79b986662a98883e3a9cb549388d83fe2d67a",
+          "message": "WIP",
+          "timestamp": "2025-09-24T20:54:18Z",
+          "url": "https://github.com/tdrwenski/RAJAPerf/commit/73c79b986662a98883e3a9cb549388d83fe2d67a"
+        },
+        "date": 1758748132757,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "RAJA_HIP-atomic_direct_256_Basic_MULTI_REDUCE",
+            "value": 0.028463600000000002,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-atomic_occgs_256_Basic_MULTI_REDUCE",
+            "value": 0.01942876,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkatm_direct_256_Basic_PI_REDUCE",
+            "value": 0.0323428,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkatm_direct_256_Basic_REDUCE3_INT",
+            "value": 0.023417,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkatm_direct_256_Basic_REDUCE_STRUCT",
+            "value": 0.0825318,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkatm_direct_256_Basic_TRAP_INT",
+            "value": 0.035405599999999995,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkatm_occgs_256_Basic_PI_REDUCE",
+            "value": 0.017047519999999997,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkatm_occgs_256_Basic_REDUCE3_INT",
+            "value": 0.01843956,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkatm_occgs_256_Basic_REDUCE_STRUCT",
+            "value": 0.0326822,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkatm_occgs_256_Basic_TRAP_INT",
+            "value": 0.020091,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkdev_direct_256_Basic_PI_REDUCE",
+            "value": 0.024189,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkdev_direct_256_Basic_REDUCE3_INT",
+            "value": 0.0321232,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkdev_direct_256_Basic_REDUCE_STRUCT",
+            "value": 0.062179000000000005,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkdev_direct_256_Basic_TRAP_INT",
+            "value": 0.0223658,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkdev_direct_new_256_Basic_PI_REDUCE",
+            "value": 0.1115612,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkdev_direct_new_256_Basic_REDUCE3_INT",
+            "value": 0.296866,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkdev_direct_new_256_Basic_REDUCE_STRUCT",
+            "value": 0.606598,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkdev_direct_new_256_Basic_TRAP_INT",
+            "value": 0.1115672,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkdev_occgs_256_Basic_PI_REDUCE",
+            "value": 0.01940796,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkdev_occgs_256_Basic_REDUCE3_INT",
+            "value": 0.0237276,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkdev_occgs_256_Basic_REDUCE_STRUCT",
+            "value": 0.0383224,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkdev_occgs_256_Basic_TRAP_INT",
+            "value": 0.01946014,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkdev_occgs_new_256_Basic_PI_REDUCE",
+            "value": 0.0564338,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkdev_occgs_new_256_Basic_REDUCE3_INT",
+            "value": 0.1340328,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkdev_occgs_new_256_Basic_REDUCE_STRUCT",
+            "value": 0.263842,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-blkdev_occgs_new_256_Basic_TRAP_INT",
+            "value": 0.05711,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_ARRAY_OF_PTRS",
+            "value": 0.07375340000000001,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_COPY8",
+            "value": 0.0488202,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_DAXPY",
+            "value": 0.00885834,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_DAXPY_ATOMIC",
+            "value": 0.0064183,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_IF_QUAD",
+            "value": 0.0175685,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_INDEXLIST_3LOOP",
+            "value": 0.040402299999999995,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_INIT3",
+            "value": 0.01208602,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_INIT_VIEW1D",
+            "value": 0.005068199999999999,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_INIT_VIEW1D_OFFSET",
+            "value": 0.0052142,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_MAT_MAT_SHARED",
+            "value": 0.640972,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_MULADDSUB",
+            "value": 0.013205514285714285,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_NESTED_INIT",
+            "value": 0.00698276,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_PI_ATOMIC",
+            "value": 0.154443,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-direct_256_Basic_EMPTY",
+            "value": 0.00340198,
+            "unit": "ms/rep"
+          },
+          {
+            "name": "RAJA_HIP-occgs_256_Basic_EMPTY",
+            "value": 0.00197925,
             "unit": "ms/rep"
           }
         ]
