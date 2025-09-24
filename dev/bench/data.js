@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1758731912321,
+  "lastUpdate": 1758732199333,
   "repoUrl": "https://github.com/tdrwenski/RAJAPerf",
   "entries": {
     "clang_14_0_6_openmp_caliper": [
@@ -874,6 +874,50 @@ window.BENCHMARK_DATA = {
             "name": "RAJA_Seq-new_Basic_TRAP_INT",
             "value": 2.7688,
             "unit": "ms/rep"
+          }
+        ]
+      }
+    ],
+    "clang_14_0_6_caliper": [
+      {
+        "commit": {
+          "author": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "committer": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "id": "5f5a0243ef2c9a11be2f08fead8275b36f79b4ca",
+          "message": "Revert \"WIP turn on comment on alert\"\n\nThis reverts commit 5dcb476f7f07a2f298255a2aeadafbbd591f9f53.",
+          "timestamp": "2025-09-24T16:31:39Z",
+          "url": "https://github.com/tdrwenski/RAJAPerf/commit/5f5a0243ef2c9a11be2f08fead8275b36f79b4ca"
+        },
+        "date": 1758732198708,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "RAJA_OpenMP_Basic_DAXPY",
+            "value": 0.00886264,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_OpenMP_Basic_PI_ATOMIC",
+            "value": 3.06848,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_Seq_Basic_DAXPY",
+            "value": 0.23034,
+            "unit": "s"
+          },
+          {
+            "name": "RAJA_Seq_Basic_PI_ATOMIC",
+            "value": 0.153555,
+            "unit": "s"
           }
         ]
       }
