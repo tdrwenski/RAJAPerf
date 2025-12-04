@@ -76,7 +76,7 @@ stages:
     include:
       - local: '.gitlab/custom-jobs-and-variables.yml'
       - project: 'radiuss/radiuss-shared-ci'
-        ref: 'woptim/workflow-token'
+        ref: 'performance-job-after-script'
         file: 'pipelines/${CI_MACHINE}.yml'
       - artifact: '${CI_MACHINE}-jobs.yml'
         job: 'generate-job-lists'
