@@ -31,7 +31,7 @@ variables:
 # LC GITLAB CONFIGURATION
 # Use an LLNL service user to run CI. This prevents from running pipelines as
 # an actual user.
-  LLNL_SERVICE_USER: rajasa
+  LLNL_SERVICE_USER: ""
 # Use the service user workspace. Solves permission issues, stores everything
 # at the same location whoever triggers a pipeline.
 #  CUSTOM_CI_BUILDS_DIR: "/usr/workspace/rajasa/gitlab-runner"
@@ -43,7 +43,7 @@ variables:
 # SHARED_CI CONFIGURATION
 # Required information about GitHub repository
   GITHUB_PROJECT_NAME: "RAJAPerf"
-  GITHUB_PROJECT_ORG: "LLNL"
+  GITHUB_PROJECT_ORG: "tdrwenski"
 # Set the build-and-test command.
 # Nested variables are allowed and useful to customize the job command. We
 # prevent variable expansion so that you can define them at job level.
