@@ -94,138 +94,138 @@ include:
 
 # One job to generate the job list for all the subpipelines
 # RAJAPerf uses the RAJA submodule for radiuss-jobs
-generate-job-lists:
-  stage: prerequisites
-  tags: [shell, oslic]
-  variables:
-    GIT_SUBMODULE_DEPTH: 2
-    GIT_SUBMODULE_STRATEGY: recursive
-    GIT_SUBMODULE_PATHS: tpl/RAJA
-    RADIUSS_JOBS_PATH: "tpl/RAJA/scripts/radiuss-spack-configs/gitlab/radiuss-jobs"
-    LOCAL_JOBS_PATH: ".gitlab/jobs"
-  script:
-    - cat ${RADIUSS_JOBS_PATH}/dane.yml ${LOCAL_JOBS_PATH}/dane.yml > dane-jobs.yml
-    - cat ${RADIUSS_JOBS_PATH}/matrix.yml ${LOCAL_JOBS_PATH}/matrix.yml > matrix-jobs.yml
-    - cat ${RADIUSS_JOBS_PATH}/corona.yml ${LOCAL_JOBS_PATH}/corona.yml > corona-jobs.yml
-    - cat ${RADIUSS_JOBS_PATH}/tioga.yml ${LOCAL_JOBS_PATH}/tioga.yml > tioga-jobs.yml
-    - cat ${RADIUSS_JOBS_PATH}/tuolumne.yml ${LOCAL_JOBS_PATH}/tuolumne.yml > tuolumne-jobs.yml
-  artifacts:
-    paths:
-      - dane-jobs.yml
-      - matrix-jobs.yml
-      - corona-jobs.yml
-      - tioga-jobs.yml
-      - tuolumne-jobs.yml
+# generate-job-lists:
+#   stage: prerequisites
+#   tags: [shell, oslic]
+#   variables:
+#     GIT_SUBMODULE_DEPTH: 2
+#     GIT_SUBMODULE_STRATEGY: recursive
+#     GIT_SUBMODULE_PATHS: tpl/RAJA
+#     RADIUSS_JOBS_PATH: "tpl/RAJA/scripts/radiuss-spack-configs/gitlab/radiuss-jobs"
+#     LOCAL_JOBS_PATH: ".gitlab/jobs"
+#   script:
+#     - cat ${RADIUSS_JOBS_PATH}/dane.yml ${LOCAL_JOBS_PATH}/dane.yml > dane-jobs.yml
+#     - cat ${RADIUSS_JOBS_PATH}/matrix.yml ${LOCAL_JOBS_PATH}/matrix.yml > matrix-jobs.yml
+#     - cat ${RADIUSS_JOBS_PATH}/corona.yml ${LOCAL_JOBS_PATH}/corona.yml > corona-jobs.yml
+#     - cat ${RADIUSS_JOBS_PATH}/tioga.yml ${LOCAL_JOBS_PATH}/tioga.yml > tioga-jobs.yml
+#     - cat ${RADIUSS_JOBS_PATH}/tuolumne.yml ${LOCAL_JOBS_PATH}/tuolumne.yml > tuolumne-jobs.yml
+#   artifacts:
+#     paths:
+#       - dane-jobs.yml
+#       - matrix-jobs.yml
+#       - corona-jobs.yml
+#       - tioga-jobs.yml
+#       - tuolumne-jobs.yml
 
-# DANE
-dane-up-check:
-  extends: [.dane, .machine-check]
-  variables:
-    ASSOCIATED_CHILD_PIPELINE: "dane-build-and-test"
+# # DANE
+# dane-up-check:
+#   extends: [.dane, .machine-check]
+#   variables:
+#     ASSOCIATED_CHILD_PIPELINE: "dane-build-and-test"
 
-dane-build-and-test:
-  extends: [.dane, .build-and-test]
-  needs: [dane-up-check, generate-job-lists]
-  trigger:
-    include:
-      - component: $CI_SERVER_FQDN/radiuss/radiuss-shared-ci/dane-pipeline@v2026.02.0
-        inputs:
-          job_cmd: $JOB_CMD
-          shared_alloc: $DANE_SHARED_ALLOC
-          job_alloc: $DANE_JOB_ALLOC
-          github_project_name: $GITHUB_PROJECT_NAME
-          github_project_org: $GITHUB_PROJECT_ORG
-      - local: '.gitlab/custom-jobs.yml'
-      - artifact: 'dane-jobs.yml'
-        job: 'generate-job-lists'
+# dane-build-and-test:
+#   extends: [.dane, .build-and-test]
+#   needs: [dane-up-check, generate-job-lists]
+#   trigger:
+#     include:
+#       - component: $CI_SERVER_FQDN/radiuss/radiuss-shared-ci/dane-pipeline@v2026.02.0
+#         inputs:
+#           job_cmd: $JOB_CMD
+#           shared_alloc: $DANE_SHARED_ALLOC
+#           job_alloc: $DANE_JOB_ALLOC
+#           github_project_name: $GITHUB_PROJECT_NAME
+#           github_project_org: $GITHUB_PROJECT_ORG
+#       - local: '.gitlab/custom-jobs.yml'
+#       - artifact: 'dane-jobs.yml'
+#         job: 'generate-job-lists'
 
-# MATRIX
-matrix-up-check:
-  extends: [.matrix, .machine-check]
-  variables:
-    ASSOCIATED_CHILD_PIPELINE: "matrix-build-and-test"
+# # MATRIX
+# matrix-up-check:
+#   extends: [.matrix, .machine-check]
+#   variables:
+#     ASSOCIATED_CHILD_PIPELINE: "matrix-build-and-test"
 
-matrix-build-and-test:
-  extends: [.matrix, .build-and-test]
-  needs: [matrix-up-check, generate-job-lists]
-  trigger:
-    include:
-      - component: $CI_SERVER_FQDN/radiuss/radiuss-shared-ci/matrix-pipeline@v2026.02.0
-        inputs:
-          job_cmd: $JOB_CMD
-          shared_alloc: $MATRIX_SHARED_ALLOC
-          job_alloc: $MATRIX_JOB_ALLOC
-          github_project_name: $GITHUB_PROJECT_NAME
-          github_project_org: $GITHUB_PROJECT_ORG
-      - local: '.gitlab/custom-jobs.yml'
-      - artifact: 'matrix-jobs.yml'
-        job: 'generate-job-lists'
+# matrix-build-and-test:
+#   extends: [.matrix, .build-and-test]
+#   needs: [matrix-up-check, generate-job-lists]
+#   trigger:
+#     include:
+#       - component: $CI_SERVER_FQDN/radiuss/radiuss-shared-ci/matrix-pipeline@v2026.02.0
+#         inputs:
+#           job_cmd: $JOB_CMD
+#           shared_alloc: $MATRIX_SHARED_ALLOC
+#           job_alloc: $MATRIX_JOB_ALLOC
+#           github_project_name: $GITHUB_PROJECT_NAME
+#           github_project_org: $GITHUB_PROJECT_ORG
+#       - local: '.gitlab/custom-jobs.yml'
+#       - artifact: 'matrix-jobs.yml'
+#         job: 'generate-job-lists'
 
-# CORONA
-corona-up-check:
-  extends: [.corona, .machine-check]
-  variables:
-    ASSOCIATED_CHILD_PIPELINE: "corona-build-and-test"
+# # CORONA
+# corona-up-check:
+#   extends: [.corona, .machine-check]
+#   variables:
+#     ASSOCIATED_CHILD_PIPELINE: "corona-build-and-test"
 
-corona-build-and-test:
-  extends: [.corona, .build-and-test]
-  needs: [corona-up-check, generate-job-lists]
-  trigger:
-    include:
-      - component: $CI_SERVER_FQDN/radiuss/radiuss-shared-ci/corona-pipeline@v2026.02.0
-        inputs:
-          job_cmd: $JOB_CMD
-          shared_alloc: $CORONA_SHARED_ALLOC
-          job_alloc: $CORONA_JOB_ALLOC
-          github_project_name: $GITHUB_PROJECT_NAME
-          github_project_org: $GITHUB_PROJECT_ORG
-      - local: '.gitlab/custom-jobs.yml'
-      - artifact: 'corona-jobs.yml'
-        job: 'generate-job-lists'
+# corona-build-and-test:
+#   extends: [.corona, .build-and-test]
+#   needs: [corona-up-check, generate-job-lists]
+#   trigger:
+#     include:
+#       - component: $CI_SERVER_FQDN/radiuss/radiuss-shared-ci/corona-pipeline@v2026.02.0
+#         inputs:
+#           job_cmd: $JOB_CMD
+#           shared_alloc: $CORONA_SHARED_ALLOC
+#           job_alloc: $CORONA_JOB_ALLOC
+#           github_project_name: $GITHUB_PROJECT_NAME
+#           github_project_org: $GITHUB_PROJECT_ORG
+#       - local: '.gitlab/custom-jobs.yml'
+#       - artifact: 'corona-jobs.yml'
+#         job: 'generate-job-lists'
 
-# TIOGA
-tioga-up-check:
-  extends: [.tioga, .machine-check]
-  variables:
-    ASSOCIATED_CHILD_PIPELINE: "tioga-build-and-test"
+# # TIOGA
+# tioga-up-check:
+#   extends: [.tioga, .machine-check]
+#   variables:
+#     ASSOCIATED_CHILD_PIPELINE: "tioga-build-and-test"
 
-tioga-build-and-test:
-  extends: [.tioga, .build-and-test]
-  needs: [tioga-up-check, generate-job-lists]
-  trigger:
-    include:
-      - component: $CI_SERVER_FQDN/radiuss/radiuss-shared-ci/tioga-pipeline@v2026.02.0
-        inputs:
-          job_cmd: $JOB_CMD
-          shared_alloc: $TIOGA_SHARED_ALLOC
-          job_alloc: $TIOGA_JOB_ALLOC
-          github_project_name: $GITHUB_PROJECT_NAME
-          github_project_org: $GITHUB_PROJECT_ORG
-      - local: '.gitlab/custom-jobs.yml'
-      - artifact: 'tioga-jobs.yml'
-        job: 'generate-job-lists'
+# tioga-build-and-test:
+#   extends: [.tioga, .build-and-test]
+#   needs: [tioga-up-check, generate-job-lists]
+#   trigger:
+#     include:
+#       - component: $CI_SERVER_FQDN/radiuss/radiuss-shared-ci/tioga-pipeline@v2026.02.0
+#         inputs:
+#           job_cmd: $JOB_CMD
+#           shared_alloc: $TIOGA_SHARED_ALLOC
+#           job_alloc: $TIOGA_JOB_ALLOC
+#           github_project_name: $GITHUB_PROJECT_NAME
+#           github_project_org: $GITHUB_PROJECT_ORG
+#       - local: '.gitlab/custom-jobs.yml'
+#       - artifact: 'tioga-jobs.yml'
+#         job: 'generate-job-lists'
 
-# TUOLUMNE
-tuolumne-up-check:
-  extends: [.tuolumne, .machine-check]
-  variables:
-    ASSOCIATED_CHILD_PIPELINE: "tuolumne-build-and-test"
+# # TUOLUMNE
+# tuolumne-up-check:
+#   extends: [.tuolumne, .machine-check]
+#   variables:
+#     ASSOCIATED_CHILD_PIPELINE: "tuolumne-build-and-test"
 
-tuolumne-build-and-test:
-  extends: [.tuolumne, .build-and-test]
-  needs: [tuolumne-up-check, generate-job-lists]
-  trigger:
-    include:
-      - component: $CI_SERVER_FQDN/radiuss/radiuss-shared-ci/tuolumne-pipeline@v2026.02.0
-        inputs:
-          job_cmd: $JOB_CMD
-          shared_alloc: $TUOLUMNE_SHARED_ALLOC
-          job_alloc: $TUOLUMNE_JOB_ALLOC
-          github_project_name: $GITHUB_PROJECT_NAME
-          github_project_org: $GITHUB_PROJECT_ORG
-      - local: '.gitlab/custom-jobs.yml'
-      - artifact: 'tuolumne-jobs.yml'
-        job: 'generate-job-lists'
+# tuolumne-build-and-test:
+#   extends: [.tuolumne, .build-and-test]
+#   needs: [tuolumne-up-check, generate-job-lists]
+#   trigger:
+#     include:
+#       - component: $CI_SERVER_FQDN/radiuss/radiuss-shared-ci/tuolumne-pipeline@v2026.02.0
+#         inputs:
+#           job_cmd: $JOB_CMD
+#           shared_alloc: $TUOLUMNE_SHARED_ALLOC
+#           job_alloc: $TUOLUMNE_JOB_ALLOC
+#           github_project_name: $GITHUB_PROJECT_NAME
+#           github_project_org: $GITHUB_PROJECT_ORG
+#       - local: '.gitlab/custom-jobs.yml'
+#       - artifact: 'tuolumne-jobs.yml'
+#         job: 'generate-job-lists'
 
 # PERFORMANCE
 performance-measurements:
