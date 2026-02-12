@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1770920129847,
+  "lastUpdate": 1770920131023,
   "repoUrl": "https://github.com/tdrwenski/RAJAPerf",
   "entries": {
     "clang_14_0_6_mpi_caliper": [
@@ -12988,6 +12988,76 @@ window.BENCHMARK_DATA = {
           {
             "name": "RAJA_HIP-block_256_Basic_PI_ATOMIC",
             "value": 0.1518274,
+            "unit": "ms/rep",
+            "extra": "reps: 50, passes: 1, total_time: 0.008s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "committer": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "id": "bf452c880013a7300895800cea35ffca5e10d0d0",
+          "message": "Fix environment variable",
+          "timestamp": "2026-02-11T23:37:34Z",
+          "url": "https://github.com/tdrwenski/RAJAPerf/commit/bf452c880013a7300895800cea35ffca5e10d0d0"
+        },
+        "date": 1770920130157,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "RAJA_HIP-block_256_Basic_DAXPY",
+            "value": 0.0092925,
+            "unit": "ms/rep",
+            "extra": "reps: 500, passes: 1, total_time: 0.005s"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_DAXPY_ATOMIC",
+            "value": 0.0070515,
+            "unit": "ms/rep",
+            "extra": "reps: 500, passes: 1, total_time: 0.004s"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_INIT3",
+            "value": 0.01307454,
+            "unit": "ms/rep",
+            "extra": "reps: 500, passes: 1, total_time: 0.007s"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_INIT_VIEW1D",
+            "value": 0.0050982,
+            "unit": "ms/rep",
+            "extra": "reps: 2500, passes: 1, total_time: 0.013s"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_INIT_VIEW1D_OFFSET",
+            "value": 0.0053018,
+            "unit": "ms/rep",
+            "extra": "reps: 2500, passes: 1, total_time: 0.013s"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_MULADDSUB",
+            "value": 0.015820257142857144,
+            "unit": "ms/rep",
+            "extra": "reps: 350, passes: 1, total_time: 0.006s"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_NESTED_INIT",
+            "value": 0.00708932,
+            "unit": "ms/rep",
+            "extra": "reps: 1000, passes: 1, total_time: 0.007s"
+          },
+          {
+            "name": "RAJA_HIP-block_256_Basic_PI_ATOMIC",
+            "value": 0.15425619999999998,
             "unit": "ms/rep",
             "extra": "reps: 50, passes: 1, total_time: 0.008s"
           }
