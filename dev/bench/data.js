@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1773101400058,
+  "lastUpdate": 1773101413822,
   "repoUrl": "https://github.com/tdrwenski/RAJAPerf",
   "entries": {
     "clang_14_0_6_mpi_caliper": [
@@ -3701,6 +3701,166 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/tdrwenski/RAJAPerf/commit/d233db607a4e2112061cb9cc755d407580429813"
         },
         "date": 1773101393422,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "RAJA_Seq-default_Basic_ARRAY_OF_PTRS",
+            "value": 0.50315,
+            "unit": "ms/rep",
+            "extra": "reps: 250, passes: 112, total_time: 14.088s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_COPY8",
+            "value": 0.46959285714285715,
+            "unit": "ms/rep",
+            "extra": "reps: 250, passes: 112, total_time: 13.149s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_DAXPY",
+            "value": 0.05388285714285714,
+            "unit": "ms/rep",
+            "extra": "reps: 2500, passes: 112, total_time: 15.087s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_DAXPY_ATOMIC",
+            "value": 0.053808214285714286,
+            "unit": "ms/rep",
+            "extra": "reps: 2500, passes: 112, total_time: 15.066s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_EMPTY",
+            "value": 0.003011732142857143,
+            "unit": "ms/rep",
+            "extra": "reps: 5000, passes: 112, total_time: 1.687s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_IF_QUAD",
+            "value": 0.14049900793650794,
+            "unit": "ms/rep",
+            "extra": "reps: 900, passes: 112, total_time: 14.162s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_INDEXLIST_3LOOP",
+            "value": 0.12152553571428572,
+            "unit": "ms/rep",
+            "extra": "reps: 500, passes: 112, total_time: 6.805s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_INIT3",
+            "value": 0.15591607142857142,
+            "unit": "ms/rep",
+            "extra": "reps: 2500, passes: 112, total_time: 43.657s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_INIT_VIEW1D",
+            "value": 0.03050807142857143,
+            "unit": "ms/rep",
+            "extra": "reps: 12500, passes: 112, total_time: 42.711s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_INIT_VIEW1D_OFFSET",
+            "value": 0.03053078571428571,
+            "unit": "ms/rep",
+            "extra": "reps: 12500, passes: 112, total_time: 42.743s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_MAT_MAT_SHARED",
+            "value": 2.902975,
+            "unit": "ms/rep",
+            "extra": "reps: 25, passes: 112, total_time: 8.128s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_MULADDSUB",
+            "value": 0.15596173469387756,
+            "unit": "ms/rep",
+            "extra": "reps: 1750, passes: 112, total_time: 30.569s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_NESTED_INIT",
+            "value": 0.03055625,
+            "unit": "ms/rep",
+            "extra": "reps: 5000, passes: 112, total_time: 17.111s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_PI_ATOMIC",
+            "value": 0.012130071428571428,
+            "unit": "ms/rep",
+            "extra": "reps: 250, passes: 112, total_time: 0.340s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_PI_REDUCE",
+            "value": 0.012146821428571429,
+            "unit": "ms/rep",
+            "extra": "reps: 250, passes: 112, total_time: 0.340s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_REDUCE3_INT",
+            "value": 0.008170571428571428,
+            "unit": "ms/rep",
+            "extra": "reps: 250, passes: 112, total_time: 0.229s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_REDUCE_STRUCT",
+            "value": 0.03428739285714286,
+            "unit": "ms/rep",
+            "extra": "reps: 250, passes: 112, total_time: 0.960s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_TRAP_INT",
+            "value": 0.030360071428571427,
+            "unit": "ms/rep",
+            "extra": "reps: 250, passes: 112, total_time: 0.850s"
+          },
+          {
+            "name": "RAJA_Seq-default_Basic_MULTI_REDUCE",
+            "value": 0.03732214285714286,
+            "unit": "ms/rep",
+            "extra": "reps: 250, passes: 112, total_time: 1.045s"
+          },
+          {
+            "name": "RAJA_Seq-new_Basic_PI_REDUCE",
+            "value": 0.012091,
+            "unit": "ms/rep",
+            "extra": "reps: 250, passes: 112, total_time: 0.339s"
+          },
+          {
+            "name": "RAJA_Seq-new_Basic_REDUCE3_INT",
+            "value": 0.004498857142857143,
+            "unit": "ms/rep",
+            "extra": "reps: 250, passes: 112, total_time: 0.126s"
+          },
+          {
+            "name": "RAJA_Seq-new_Basic_REDUCE_STRUCT",
+            "value": 0.032862142857142854,
+            "unit": "ms/rep",
+            "extra": "reps: 250, passes: 112, total_time: 0.920s"
+          },
+          {
+            "name": "RAJA_Seq-new_Basic_TRAP_INT",
+            "value": 0.03046210714285714,
+            "unit": "ms/rep",
+            "extra": "reps: 250, passes: 112, total_time: 0.853s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "committer": {
+            "name": "Tara Drwenski",
+            "username": "tdrwenski",
+            "email": "drwenski1@llnl.gov"
+          },
+          "id": "d233db607a4e2112061cb9cc755d407580429813",
+          "message": "Comment out mpi/rocm jobs",
+          "timestamp": "2026-03-09T23:34:56Z",
+          "url": "https://github.com/tdrwenski/RAJAPerf/commit/d233db607a4e2112061cb9cc755d407580429813"
+        },
+        "date": 1773101412054,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
