@@ -238,6 +238,7 @@ performance-measurements:
           job_cmd: $JOB_CMD
           dane_perf_alloc: $DANE_PERF_ALLOC
           tuolumne_perf_alloc: $TUOLUMNE_PERF_ALLOC
+          tioga_perf_alloc: $TUOLUMNE_PERF_ALLOC
           perf_processing_cmd: "${CI_PROJECT_DIR}/scripts/gitlab/caliper_to_github_benchmark.py"
           perf_artifact_dir: $PERF_ARTIFACT_DIR
           perf_results_file: "*_*-*.cali"
